@@ -1,0 +1,11 @@
+E:\_Sources\4_stimulsoft-test\server\server\bin\Debug\netcoreapp2.0\server.deps.json
+E:\_Sources\4_stimulsoft-test\server\server\bin\Debug\netcoreapp2.0\server.runtimeconfig.json
+E:\_Sources\4_stimulsoft-test\server\server\bin\Debug\netcoreapp2.0\server.runtimeconfig.dev.json
+E:\_Sources\4_stimulsoft-test\server\server\bin\Debug\netcoreapp2.0\server.dll
+E:\_Sources\4_stimulsoft-test\server\server\bin\Debug\netcoreapp2.0\server.pdb
+E:\_Sources\4_stimulsoft-test\server\server\obj\Debug\netcoreapp2.0\server.csprojResolveAssemblyReference.cache
+E:\_Sources\4_stimulsoft-test\server\server\obj\Debug\netcoreapp2.0\server.csproj.CoreCompileInputs.cache
+E:\_Sources\4_stimulsoft-test\server\server\obj\Debug\netcoreapp2.0\server.AssemblyInfoInputs.cache
+E:\_Sources\4_stimulsoft-test\server\server\obj\Debug\netcoreapp2.0\server.AssemblyInfo.cs
+E:\_Sources\4_stimulsoft-test\server\server\obj\Debug\netcoreapp2.0\server.dll
+E:\_Sources\4_stimulsoft-test\server\server\obj\Debug\netcoreapp2.0\server.pdb
