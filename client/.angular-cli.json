@@ -20,14 +20,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "stimulsoft/stimulsoft.designer.office2013.whiteblue.css",
-        "stimulsoft/stimulsoft.viewer.office2013.whiteblue.css",
-        "styles.css"
+        "stimulsoft/stimulsoft.designer.office2013.whiteblue.scss",
+        "stimulsoft/stimulsoft.viewer.office2013.whiteblue.scss",
+        "styles.scss"
       ],
       "scripts": [
         "stimulsoft/stimulsoft.reports.js",
         "stimulsoft/stimulsoft.viewer.js",
-        "stimulsoft/stimulsoft.designer.js"],
+        "stimulsoft/stimulsoft.designer.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -57,7 +58,8 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
-    "component": {}
+    "styleExt": "scss",
+    "component": {
+    }
   }
 }
