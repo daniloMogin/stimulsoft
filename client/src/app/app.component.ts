@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-declare var Stimulsoft: any;
+import { ConfigService } from './config/config.service';
 
 @Component({
     selector: 'app-root',
@@ -11,53 +10,19 @@ declare var Stimulsoft: any;
                     <div id="designer"></div>
               </div>`
 })
-export class AppComponent {
-    options: any;
-    designer: any;
-    data: string;
+export class AppComponent implements OnInit {
+    test: any;
+    simul: any;
 
-    constructor(private http: HttpClient) {
+    constructor(private _configService: ConfigService) {
+
     }
 
-    ngOnInit() {
-        console.log('Loading Designer view');
+    async ngOnInit() {
+        this.test = await this._configService.getCustomers();
 
-        console.log('Set full screen mode for the designer');
-        this.options = new Stimulsoft.Designer.StiDesignerOptions();
-        this.options.appearance.fullScreenMode = false;
-
-        console.log('Create the report designer with specified options');
-        this.designer = new Stimulsoft.Designer.StiDesigner(this.options, 'StiDesigner', false);
-
-        console.log('Edit report template in the designer');
-        this.designer.report = new Stimulsoft.Report.StiReport();
-
-        var dataSet = new Stimulsoft.System.Data.DataSet("SimpleDataSet");
-        dataSet.readJsonFile("reports/Demo.json");
-
-        var report = new Stimulsoft.Report.StiReport();
-        report.regData(dataSet.dataSetName, "", dataSet);
-
-        this.designer.report = report;
-
-        // this.designer.report.regData(dataSet.dataSetName, "", dataSet);
-
-        // this.http.get('http://localhost:52961/api/customers')
-        //     .subscribe(data => {
-        //         console.log(`data`);
-        //         console.log(data);
-                
-        //         dataSet.readJsonFile(data);
-        //         this.designer.report.regData(dataSet.dataSetName, "", dataSet);
-        //     });
-
-
-        console.log('Load report from url');
-        this.designer.report.loadFile('/reports/SimpleList.mrt');
-
-        console.log('Rendering the designer to selected element');
-        this.designer.renderHtml('designer');
-
-        console.log('Loading completed successfully!');
+        console.log(`this.test`);
+        console.log(this.test);
+        this.simul = await this._configService.loadDesigner(this.test);
     }
 }
