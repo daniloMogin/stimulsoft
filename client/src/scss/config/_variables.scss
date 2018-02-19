@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+/*---------- variables
+-----------------------------------------------------------*/
+// Font
+$font-main: 'Muli' sans-serif !default;
+$font-sec: 'Open Sans', serif !default;
+
+// Colors
+$black: #000 !default;
+$brown: #70341D !default;
+$gray: #3F4245 !default;
+$green: #99CC33 !default;
+$orange: #E87F40 !default;
+$yellow_light: #FFFBC2 !default;
+$white: #fff !default;
+
+// Durations
+$fastDuration: .1s !default;
+$mediumDuration: .3s !default;
+$slowDuration: .6s !default;
