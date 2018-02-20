@@ -32,7 +32,7 @@ namespace server.Controllers
                 _customerRepository.AddCustomer(new Customers() { CustomerId = 4, ContactName = "Test customer 4", Address = "Test address 4", City = "Test City 4", Country = "Test country 4", PostalCode = 21000, CompanyName = "Test company name 4", ContactTitle = "Test title 4", Phone = "0038162222555", Fax = "0038154555544", CreatedOn = DateTime.Now, UpdatedOn = DateTime.Now });
 
 
-                return "Database CustomersDb was created, and collection 'Customers' was filled with 4 sample items";
+                return "Database GeutebrueckDb was created, and collection 'Customers' was filled with 4 sample items";
             }
             return "Unknown";
         }

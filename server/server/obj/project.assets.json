@@ -13664,11 +13664,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "e:\\_Sources\\4_stimulsoft-test\\server\\server\\server.csproj",
+      "projectUniqueName": "E:\\_Sources\\4_stimulsoft-test\\server\\server\\server.csproj",
       "projectName": "server",
-      "projectPath": "e:\\_Sources\\4_stimulsoft-test\\server\\server\\server.csproj",
+      "projectPath": "E:\\_Sources\\4_stimulsoft-test\\server\\server\\server.csproj",
       "packagesPath": "C:\\Users\\danilo.mogin\\.nuget\\packages\\",
-      "outputPath": "e:\\_Sources\\4_stimulsoft-test\\server\\server\\obj\\",
+      "outputPath": "E:\\_Sources\\4_stimulsoft-test\\server\\server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

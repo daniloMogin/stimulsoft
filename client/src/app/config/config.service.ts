@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
@@ -10,6 +10,8 @@ declare let Stimulsoft: any;
 @Injectable()
 export class ConfigService {
     private databaseUrl = 'http://localhost:52961/api/customers';
+    private saveReportUrl = 'http://localhost:52961/api/reports';
+    private getReportUrl = 'http://localhost:52961/api/reports';
     options: any;
     designer: any;
 
@@ -21,10 +23,6 @@ export class ConfigService {
     }
 
     loadDesigner(input) {
-
-        console.log('input');
-        console.log(input);
-
         console.log('Loading Designer view');
         this.options = new Stimulsoft.Designer.StiDesignerOptions();
         this.options.appearance.fullScreenMode = false;
@@ -41,7 +39,7 @@ export class ConfigService {
         report.regData("GeutebrueckDb", "Demo", dataSet);
 
         console.log('Synchronising dictonary');
-        report.dictionary.synchronize();        
+        report.dictionary.synchronize();
 
         console.log('Creating designer');
         this.designer.report = report;
@@ -50,5 +48,56 @@ export class ConfigService {
         this.designer.renderHtml('designer');
 
         console.log('Loading completed successfully!');
+
+        // Assign the onSaveReport event function
+        this.designer.onSaveReport = e => {
+            var data = e.report.saveToJsonString();
+            const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+            this.http.post(this.saveReportUrl, { 
+                guid: JSON.parse(data).ReportGuid,
+                name: JSON.parse(data).ReportFile,
+                data: JSON.parse(data)
+            }, { headers: headers })
+                .subscribe(
+                    res => {
+                        console.log(res);
+                    },
+                    err => {
+                        console.log("Error occured");
+                        console.log(err);
+                    }
+                );
+            console.log("Save to JSON string complete.")
+        }
+
+        // Assign the onSaveAsReport event function
+        this.designer.onSaveAsReport = e => {
+            var data = e.report.saveToJsonString();
+            const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+            this.http.post(this.saveReportUrl, { 
+                guid: JSON.parse(data).ReportGuid,
+                name: JSON.parse(data).ReportFile,
+                data: JSON.parse(data)
+            }, { headers: headers })
+                .subscribe(
+                    res => {
+                        console.log(res);
+                    },
+                    err => {
+                        console.log("Error occured");
+                        console.log(err);
+                    }
+                );
+            console.log("SaveAs to JSON string complete.")
+        }
+
+        // this.designer.onOpenReport = e => {
+        //     console.log('USAO SAM U OPEN!!!!');
+        //     console.log(e);
+        //     var report = new Stimulsoft.Report.StiReport();
+        //     var obj = JSON.parse(e);
+        //     report.load(obj.report);
+        //     this.designer.report = report;
+        // }
     }
 }
