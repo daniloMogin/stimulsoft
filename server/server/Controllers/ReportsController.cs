@@ -27,11 +27,11 @@ namespace server.Controllers
             {
                 var saveReport = Save(data);
 
-                return "Done";
+                return "Save done!!!";
             } else
             {
-                var saveReport = Update(data);
-                return "Report with that NAME aleready exists!";
+                Update(data);
+                return "Update done!!!";
             }
         }
 
@@ -47,11 +47,11 @@ namespace server.Controllers
             }
         }
 
-        private Task Update([FromBody] Reports data)
+        private void Update([FromBody] Reports data)
         {
             try
             {
-                return _reportRepository.UpdateReport(data);
+                _reportRepository.UpdateReport(data);
             }
             catch (Exception ex)
             {

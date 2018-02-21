@@ -30,20 +30,10 @@
 
 /*----------  slider
 ------------------------------------------------------------------------------*/
-// #StiDesigner {
-//     .stiDesignerToolBar {
-//         background-color: $orange !important;
-//         .stiDesignerToolButton_Mouse {
-//             background-color: $brown;
-//         }
-//     }
-//     .stiDesignerHomePanel_Mouse {
-//         background-color: $yellow_light;
-//     }
-//     .stiDesignerToolbox {
-//         background-color: $green;
-//     }
-//     .stiDesignerPaintPanel {
-//         background-color: $brown;
-//     }
-// } 
+#designer {
+    .stiDesignerPaintPanel {
+        svg {
+            float: left;
+        }
+    }
+}

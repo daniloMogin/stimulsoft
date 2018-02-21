@@ -11,7 +11,6 @@ declare let Stimulsoft: any;
 export class ConfigService {
     private databaseUrl = 'http://localhost:52961/api/customers';
     private saveReportUrl = 'http://localhost:52961/api/reports';
-    private getReportUrl = 'http://localhost:52961/api/reports';
     options: any;
     designer: any;
 
@@ -25,7 +24,8 @@ export class ConfigService {
     loadDesigner(input) {
         console.log('Loading Designer view');
         this.options = new Stimulsoft.Designer.StiDesignerOptions();
-        this.options.appearance.fullScreenMode = false;
+        // this.options.appearance.fullScreenMode = false;
+        // this.options.defaultUnit = Stimulsoft.Report.StiReportUnitType.Inches;
         let report = new Stimulsoft.Report.StiReport();
         let dataSet = new Stimulsoft.System.Data.DataSet();
 

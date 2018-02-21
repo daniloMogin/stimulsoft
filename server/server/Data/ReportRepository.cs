@@ -34,7 +34,7 @@ namespace server.Data
             }
         }
         
-        public async Task<object> UpdateReport(Reports data)
+        public void UpdateReport(Reports data)
         {
             try
             {
@@ -48,9 +48,8 @@ namespace server.Data
 
                 var filter = Builders<Reports>.Filter.Where(x => x.Name == data.Name);
                 var update = Builders<Reports>.Update.Set(x => x.Name, data.Name);
-                var result = _context.Reports.UpdateOneAsync(filter, update).Result;
-
-                return result;
+                var result =  _context.Reports.UpdateOneAsync(filter, update).Result;
+                
             }
             catch (Exception ex)
             {
